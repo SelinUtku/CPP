@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:10:33 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/19 19:17:07 by sutku            ###   ########.fr       */
+/*   Updated: 2023/09/19 23:21:50 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	main()
 			flag = 1;
 		else if (command.compare("ADD") == 0)
 		{
+			pb.AddNewContact(0);
 		}
 		else if (command.compare("SEARCH") == 0)
 		{
