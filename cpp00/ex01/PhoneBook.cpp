@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:17:38 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/19 23:51:57 by sutku            ###   ########.fr       */
+/*   Updated: 2023/09/21 18:33:28 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,24 @@ std::string	PhoneBook::GetValidInput(std::string str)
 	getline(std::cin, info);
 	while(info.empty())
 	{
-		std::cout<<"Information can not be empty. Try again ! "<<std::endl;
+		std::cout<<"Information can not be empty. Try again ! "<< std::endl;
+		std::cout<<str;
 		getline(std::cin, info);
 	}
 	return(info);
+}
+
+void PhoneBook::DisplayPhoneBook(int counter)
+{
+	int	i = 0;
+
+	while (i < counter)
+	{
+		std::cout<<arr[i].GetFirstName()<<std::endl;
+		std::cout<<arr[i].GetLastName()<<std::endl;
+		std::cout<<arr[i].GetNickName()<<std::endl;
+		std::cout<<arr[i].GetPhoneNumber()<<std::endl;
+		std::cout<<arr[i].GetDarkestSecret()<<std::endl;
+		i++;
+	}
 }

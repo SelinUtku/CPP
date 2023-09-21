@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 14:50:18 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/19 23:21:23 by sutku            ###   ########.fr       */
+/*   Updated: 2023/09/21 18:29:10 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,52 @@
 void	Contact::SetFirstName(std::string str)
 {
 	firstName = str;
-	std::cout<<firstName;
 }
 
 void	Contact::SetLastName(std::string str)
 {
 	lastName = str;
-	std::cout<<lastName;
-
 }
 
 void	Contact::SetNickName(std::string str)
 {
 	nickName = str;
-	std::cout<<nickName;
 }
 
 void	Contact::SetPhoneNumber(std::string str)
 {
 	phoneNumber = str;
-	std::cout<<phoneNumber;
 }
 
 void	Contact::SetDarkestSecret(std::string str)
 {
 	darkestSecret = str;
-	std::cout<<darkestSecret;
+}
+
+
+//GETTER
+
+std::string	Contact::GetFirstName()
+{
+	return(firstName);
+}
+
+std::string	Contact::GetLastName()
+{
+	return(lastName);
+}
+
+std::string	Contact::GetNickName()
+{
+	return(nickName);
+}
+
+std::string	Contact::GetPhoneNumber()
+{
+	return(phoneNumber);
+}
+
+std::string	Contact::GetDarkestSecret()
+{
+	return(darkestSecret);
 }
