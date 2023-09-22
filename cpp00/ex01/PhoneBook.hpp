@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:28:51 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/21 17:52:54 by sutku            ###   ########.fr       */
+/*   Updated: 2023/09/22 16:06:20 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ class PhoneBook
 	public:
 		void AddNewContact(int index);
 		void DisplayPhoneBook(int counter);
-		std::string GetValidInput(std::string str);
+		void DisplayPerson(int counter);
+		std::string GetValidInput(const std::string &str);
 };
 
 #endif
