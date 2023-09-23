@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 14:50:23 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/22 14:59:26 by sutku            ###   ########.fr       */
+/*   Updated: 2023/09/23 13:07:27 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class Contact
 		std::string	phoneNumber;
 		std::string	darkestSecret;
 	public:
-		// Contact ();
 		void	SetFirstName(const std::string &str);
 		void	SetLastName(const std::string &str);
 		void	SetNickName(const std::string &str);
@@ -37,7 +36,6 @@ class Contact
 		std::string	GetNickName();
 		std::string	GetPhoneNumber();
 		std::string	GetDarkestSecret();
-		// ~Contact ();
 };
 
 #endif

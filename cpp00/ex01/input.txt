@@ -1,0 +1,50 @@
+ADD
+John
+Doe
+Johnny
+12313123123
+This is a test.
+ADD
+Jane
+Doe
+Janey
+0987654321
+This is another test.
+ADD
+Alice
+Smith
+Ally
+5551234567
+My favorite color is blue.
+ADD
+Bob
+Johnson
+Bobby
+5559876543
+I love to play guitar.
+ADD
+Sarah
+Lee
+Sally
+5551112222
+I enjoy hiking.
+ADD
+Cagatay
+Utku
+cutku
+7727288383
+I love cars.
+ADD
+Selin
+Utku
+sutku
+48945611
+I love Cagatay
+ADD
+NewUser
+Last
+Newishhhhhhhhhhhhhhhhh
+342342332
+blablabla
+SEARCH
+1

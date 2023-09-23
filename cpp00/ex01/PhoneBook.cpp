@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:17:38 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/22 17:49:05 by sutku            ###   ########.fr       */
+/*   Updated: 2023/09/23 18:19:12 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void PhoneBook::AddNewContact(int index)
 	arr[index].SetNickName(GetValidInput("Nick Name : "));
 	arr[index].SetPhoneNumber(GetValidInput("Phone Number : "));
 	arr[index].SetDarkestSecret(GetValidInput("Darkest Secret : "));
-		
 }
 
 std::string	PhoneBook::GetValidInput(const std::string &str)
@@ -34,62 +33,74 @@ std::string	PhoneBook::GetValidInput(const std::string &str)
 	{
 		if (std::cin.eof())
 			exit(1);
-		std::cout<<"Information can not be empty. Try again ! "<< std::endl;
+		std::cerr<<"Information can not be empty. Try again ! "<< std::endl;
 		std::cout<<str;
 		getline(std::cin, info);
 	}
 	return(info);
 }
 
-void PhoneBook::DisplayPhoneBook(int counter)
+void	PhoneBook::DisplayPhoneBook(int index)
 {
 	int	i = -1;
 
-	while (++i < counter)
+	while (++i < index)
 	{
-		std::cout<<i<<"|";
+		std::cout<<std::setw(9)<<(i + 1)<<'|';
 		if (arr[i].GetFirstName().length() > 10)
 			std::cout<<std::setw(9)<<(arr[i].GetFirstName()).substr(0, 9)<<'.';
 		else
 			std::cout<<std::setw(10)<<(arr[i].GetFirstName());
-		std::cout<<"|";
+		std::cout<<'|';
 		if (arr[i].GetLastName().length() > 10)
 			std::cout<<std::setw(9)<<(arr[i].GetLastName()).substr(0, 9)<<'.';
 		else
 			std::cout<<std::setw(10)<<(arr[i].GetLastName());
-		std::cout<<"|";
+		std::cout<<'|';
 		if (arr[i].GetNickName().length() > 10)
 			std::cout<<std::setw(9)<<(arr[i].GetNickName()).substr(0, 9)<<'.';
 		else
 			std::cout<<std::setw(10)<<(arr[i].GetNickName());
-		std::cout<<std::endl;
+		std::cout<<'|'<<std::endl;
 	}
-	DisplayPerson(counter);
+	DisplayPerson(index);
 }
 
-void	PhoneBook::DisplayPerson(int counter)
+void	PhoneBook::DisplayPerson(int index)
 {
 	std::string opt;
+	bool valid = false;
 	int	i;
 
-	if (counter == 0)
+	if (index == 0)
 	{
-		std::cout<<"PhoneBook is empty !"<<std::endl;
+		std::cerr<<"PhoneBook is empty !"<<std::endl;
 		return ;
 	}
-	std::cout<<"Please select the person you would like to display : ";
-	getline(std::cin, opt);
-	if (std::cin.eof())
-		exit(1);
-	i = std::stoi(opt);
-	while (i < 0 || i > counter - 1)
+	while (valid == false)
 	{
-		std::cout<<"Out of range ! Try again : ";
+		std::cout<<"Please select the index you would like to display : ";
 		getline(std::cin, opt);
 		if (std::cin.eof())
 			exit(1);
-		i = std::stoi(opt);
+		try
+		{
+			i = std::stoi(opt) - 1;
+			if (i < 0 || i > index - 1)
+				std::cerr<<"Invalid index ! Try again."<<std::endl;
+			else
+				valid = true;
+		}
+		catch(...)
+		{
+			std::cerr<< "Invalid Argument ! Try again."<<std::endl;
+		}
 	}
+	DisplayPersonInformations(i);
+}
+
+void	PhoneBook::DisplayPersonInformations(int i)
+{
 	std::cout<<"First Name : "<<arr[i].GetFirstName()<<std::endl;
 	std::cout<<"Last Name : "<<arr[i].GetLastName()<<std::endl;
 	std::cout<<"Nick Name : "<<arr[i].GetNickName()<<std::endl;
