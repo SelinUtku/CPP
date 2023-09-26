@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 18:41:39 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/25 17:55:39 by sutku            ###   ########.fr       */
+/*   Created: 2023/09/25 15:24:50 by sutku             #+#    #+#             */
+/*   Updated: 2023/09/25 15:58:13 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main()
+Zombie* zombieHorde(int N, std::string name)
 {
-	// Object is created in stack;
-	Zombie x("StackZombie");
-	x.announce();
+	Zombie *ptr;
+	int	i = 0;
 
-	// Object is created in heap
-	Zombie *ptr = newZombie("HeapZombie");
-	ptr->announce();
-	delete(ptr);
-	
-	// Random Chump
-	randomChump("RandomZombie");
-	return (0);
+	ptr = new Zombie[N];
+	while (i < N)
+	{
+		ptr[i].setName(name);
+		i++;
+	}
+	return (ptr);
 }

@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 18:41:39 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/25 17:55:39 by sutku            ###   ########.fr       */
+/*   Created: 2023/09/24 18:23:37 by sutku             #+#    #+#             */
+/*   Updated: 2023/09/24 18:55:50 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-int	main()
+#include <iostream>
+
+class Zombie
 {
-	// Object is created in stack;
-	Zombie x("StackZombie");
-	x.announce();
+	private:
+		std::string name;
+	public:
+		Zombie(std::string name)
+		{
+			this->name = name;
+		}
+		~Zombie()
+		{
+			std::cout<<this->name<<" is destroyed"<<std::endl;
+		}
+		void	announce(void);
+};
+	Zombie* newZombie(std::string name);
+	void	randomChump(std::string name );
 
-	// Object is created in heap
-	Zombie *ptr = newZombie("HeapZombie");
-	ptr->announce();
-	delete(ptr);
-	
-	// Random Chump
-	randomChump("RandomZombie");
-	return (0);
-}
+#endif

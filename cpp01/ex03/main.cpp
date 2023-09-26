@@ -5,25 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 18:41:39 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/25 17:55:39 by sutku            ###   ########.fr       */
+/*   Created: 2023/09/26 15:38:29 by sutku             #+#    #+#             */
+/*   Updated: 2023/09/26 19:10:22 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-int	main()
+int main()
 {
-	// Object is created in stack;
-	Zombie x("StackZombie");
-	x.announce();
-
-	// Object is created in heap
-	Zombie *ptr = newZombie("HeapZombie");
-	ptr->announce();
-	delete(ptr);
-	
-	// Random Chump
-	randomChump("RandomZombie");
-	return (0);
+	{
+		std::cout<<"-----HumanA-----"<<std::endl;
+		Weapon club("gun");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("sharp knife");
+		bob.attack();
+	}
+	{
+		std::cout<<"-----HumanB-----"<<std::endl;
+		Weapon club;
+		HumanB jim("Jim");
+		jim.attack();
+		club.setType("sharp knife");
+		jim.setWeapon(club);
+		jim.attack();
+	}
+	return 0;
 }

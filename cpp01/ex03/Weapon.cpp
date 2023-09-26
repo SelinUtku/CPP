@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 18:41:39 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/25 17:55:39 by sutku            ###   ########.fr       */
+/*   Created: 2023/09/25 18:26:20 by sutku             #+#    #+#             */
+/*   Updated: 2023/09/26 15:21:56 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-int	main()
+void Weapon::setType(std::string str)
 {
-	// Object is created in stack;
-	Zombie x("StackZombie");
-	x.announce();
+	this->type = str;
+}
 
-	// Object is created in heap
-	Zombie *ptr = newZombie("HeapZombie");
-	ptr->announce();
-	delete(ptr);
-	
-	// Random Chump
-	randomChump("RandomZombie");
-	return (0);
+const std::string& Weapon:: getType()
+{
+	return (type);
 }

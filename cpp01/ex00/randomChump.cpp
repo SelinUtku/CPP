@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 18:41:39 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/25 17:55:39 by sutku            ###   ########.fr       */
+/*   Created: 2023/09/24 18:47:16 by sutku             #+#    #+#             */
+/*   Updated: 2023/09/24 18:55:04 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main()
+void randomChump(std::string name)
 {
-	// Object is created in stack;
-	Zombie x("StackZombie");
+	Zombie x(name);
 	x.announce();
-
-	// Object is created in heap
-	Zombie *ptr = newZombie("HeapZombie");
-	ptr->announce();
-	delete(ptr);
-	
-	// Random Chump
-	randomChump("RandomZombie");
-	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 16:03:37 by sutku             #+#    #+#              #
-#    Updated: 2023/09/24 18:53:25 by sutku            ###   ########.fr        #
+#    Updated: 2023/09/26 19:16:43 by sutku            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,20 +22,20 @@ MAGENTA = \033[0;95m
 CYAN = \033[0;96m
 WHITE = \033[0;97m
 
-SRC		=	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRC		=	main.cpp 
 OBJ		=	$(SRC:.cpp=.o)
 
 CC		= 	c++
 RM		=   rm -f
 CFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
-NAME	=	firstZombie
+NAME	=	replace
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	echo "$(CYAN)Ex00 compiled successfully$(DEF_COLOR)"
+	echo "$(CYAN)Ex04 compiled successfully$(DEF_COLOR)"
 
 clean:
 	$(RM) $(OBJ)

@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 18:41:39 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/25 17:55:39 by sutku            ###   ########.fr       */
+/*   Created: 2023/09/25 22:38:48 by sutku             #+#    #+#             */
+/*   Updated: 2023/09/26 19:09:34 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMAN_B_HPP
+#define HUMAN_B_HPP
 
-int	main()
+#include "Weapon.hpp"
+
+class HumanB
 {
-	// Object is created in stack;
-	Zombie x("StackZombie");
-	x.announce();
+	private:
+		Weapon *b; // here we need to use pointer because humanB can have no weapon at the start.
+		std::string name;
+	public:
+		HumanB(std::string str) : name(str), b(nullptr)//thats why we initialize it with nullptr.
+		{
+		}
+		void	attack();
+		void	setWeapon(Weapon arm);	
+};
 
-	// Object is created in heap
-	Zombie *ptr = newZombie("HeapZombie");
-	ptr->announce();
-	delete(ptr);
-	
-	// Random Chump
-	randomChump("RandomZombie");
-	return (0);
-}
+
+#endif

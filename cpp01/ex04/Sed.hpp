@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 18:41:39 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/25 17:55:39 by sutku            ###   ########.fr       */
+/*   Created: 2023/09/26 19:19:24 by sutku             #+#    #+#             */
+/*   Updated: 2023/09/26 19:48:32 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef SED_HPP
+# define SED_HPP
 
-int	main()
+#include <iostream>
+#include <fstream>
+
+class Sed
 {
-	// Object is created in stack;
-	Zombie x("StackZombie");
-	x.announce();
-
-	// Object is created in heap
-	Zombie *ptr = newZombie("HeapZombie");
-	ptr->announce();
-	delete(ptr);
-	
-	// Random Chump
-	randomChump("RandomZombie");
-	return (0);
+	private:
+		std::string		fileName;
+		std::string		s1;
+		std::string		s2;
+	public:
+		Sed(std::string fileName, std::string s1, std::string s2);
+		~Sed();
+		void	replace();
 }
+
+
+#endif
