@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 22:35:27 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/26 18:08:12 by sutku            ###   ########.fr       */
+/*   Updated: 2023/09/27 15:37:28 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class HumanA
 		}
 		~HumanA()
 		{
-			std::cout<<this->name<<" is destroyed ."<<std::endl;
+			std::cout<<this->name<<" destructer called"<<std::endl;
 		}
 		void	attack();
 };

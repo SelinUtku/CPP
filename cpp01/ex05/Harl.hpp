@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 18:26:26 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/27 15:38:11 by sutku            ###   ########.fr       */
+/*   Created: 2023/09/27 17:09:06 by sutku             #+#    #+#             */
+/*   Updated: 2023/09/27 20:20:50 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-#define WEAPON_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
 #include <iostream>
 
-class Weapon
+class Harl
 {
 	private:
-		std::string type;
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
 	public:
-		Weapon()
-		{
-			std::cout<<"Default constructer has been created"<<std::endl;
-		}
-		Weapon(std::string type)
-		{
-			this->setType(type);
-			std::cout<<this->type<<" constructer has been created"<<std::endl;
-		}
-		~Weapon()
-		{
-			std::cout<<this->type<<" destructer called."<<std::endl;
-		}
-		const std::string& getType();
-		void	setType(std::string str);
-		
+		Harl(void);
+		~Harl(void);
+		void complain(std::string level);
 };
+
+
 #endif

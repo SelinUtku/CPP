@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:19:24 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/26 19:48:32 by sutku            ###   ########.fr       */
+/*   Updated: 2023/09/27 14:29:28 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@
 class Sed
 {
 	private:
-		std::string		fileName;
-		std::string		s1;
-		std::string		s2;
+		std::string		inputFile;
+		std::string		outFile;
 	public:
-		Sed(std::string fileName, std::string s1, std::string s2);
+		Sed(std::string fileName);
 		~Sed();
-		void	replace();
-}
+		void	replace(std::string s1, std::string s2);
+};
 
 
 #endif

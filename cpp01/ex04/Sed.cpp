@@ -6,20 +6,48 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:20:10 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/26 19:48:26 by sutku            ###   ########.fr       */
+/*   Updated: 2023/09/27 17:43:25 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
 
-Sed::Sed(std::string fileName, std::string s1, std::string s2)
+Sed::Sed(std::string fileName) : inputFile(fileName)
 {
-	this->fileName = fileName;
-	this->s1 = s1;
-	this->s2 = s2;
+	this->outFile = this->inputFile + ".replace";
 }
 Sed::~Sed()
 {
 }
 
+void	Sed::replace(std::string s1, std::string s2)
+{
+	std::ifstream	inp(this->inputFile);
+	std::ofstream	out(this->outFile);
+	std::string		line;
+	size_t			pos;
+	if (!inp)
+	{
+		std::cerr <<this->inputFile<<" file could not open !" << std::endl;
+		exit(1);
+	}
+	if (!out)
+	{
+		std::cout <<this->outFile<<" file could not open !" << std::endl;
+		exit(1);
+	}
+	while (getline(inp, line))
+	{
+		pos = line.find(s1);// if it finds it will return pos of first char of s1 else it will return std::string::npos
+		while (pos != std::string::npos)
+		{
+			line.erase(pos, s1.length());
+			line.insert(pos, s2);
+			pos = line.find(s1, pos + s2.length());
+		}
+		out << line << std::endl;
+	}
+	inp.close();
+	out.close();
+}
