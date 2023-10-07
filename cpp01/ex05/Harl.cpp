@@ -6,20 +6,18 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 17:21:08 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/27 20:26:14 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/03 17:57:01 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-Harl::Harl(void)
+Harl::Harl()
 {
-	return ;
 }
 
-Harl::~Harl(void)
+Harl::~Harl()
 {
-	return ;
 }
 
 void Harl::debug(void)
@@ -44,10 +42,7 @@ void Harl::error(void)
 
 void Harl::complain(std::string level)
 {
-	typedef void ( Harl::*fptr )( void );
-	/* It declares that fptr is a pointer to a member function within the Harl class. 
-	The ::* syntax indicates that it's a pointer to a member function. */
-	fptr complains[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	void (Harl::*fptr[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	int	i = 0;
@@ -55,7 +50,7 @@ void Harl::complain(std::string level)
 	{
 		if (levels[i].compare(level) == 0)
 		{
-			(this->*complains[i])();
+			(this->*fptr[i])();
 			return ;
 		}
 		i++;

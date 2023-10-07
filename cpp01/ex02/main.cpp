@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 17:54:43 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/26 16:20:16 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/03 13:30:04 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,6 @@ int main()
 	std::cout<<"The value of the string variable : "<<str<<std::endl;
 	std::cout<<"The value pointed to by stringPTR : "<<*stringPTR<<std::endl;
 	std::cout<<"The value pointed to by stringREF : "<<stringREF<<std::endl;
-	// std::cout<<std::endl;
-	// stringREF = "New string";
-	// std::cout<<"The value of the string variable : "<<str<<std::endl;
-	// std::cout<<"The value pointed to by stringREF : "<<stringREF<<std::endl;
 	
-
 	return (0);
 }

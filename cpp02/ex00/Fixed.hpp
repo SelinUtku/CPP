@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 18:28:30 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/03 13:02:58 by sutku            ###   ########.fr       */
+/*   Created: 2023/10/01 15:19:06 by sutku             #+#    #+#             */
+/*   Updated: 2023/10/07 14:21:48 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-Zombie::Zombie(std::string name)
-{
-	this->name = name;
-}
+#include <iostream>
 
-Zombie::~Zombie()
+class Fixed
 {
-	std::cout<<this->name<<" is destroyed"<<std::endl;
-}
+	private:
+		int value;
+		static const int fractional = 8;
+	public:
+		Fixed();
+		Fixed(const Fixed &copy);
+		Fixed &operator=(const Fixed &copy);
+		~Fixed();
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
+};
 
-void	Zombie::announce()
-{
-	std::cout<<this->name<<": BraiiiiiiinnnzzzZ..."<<std::endl;
-}
+#endif

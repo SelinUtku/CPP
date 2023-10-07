@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:20:10 by sutku             #+#    #+#             */
-/*   Updated: 2023/09/27 17:43:25 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/03 14:00:46 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	Sed::replace(std::string s1, std::string s2)
 	}
 	while (getline(inp, line))
 	{
-		pos = line.find(s1);// if it finds it will return pos of first char of s1 else it will return std::string::npos
+		pos = line.find(s1);
 		while (pos != std::string::npos)
 		{
 			line.erase(pos, s1.length());

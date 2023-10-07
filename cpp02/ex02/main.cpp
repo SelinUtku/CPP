@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 18:28:30 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/03 13:02:58 by sutku            ###   ########.fr       */
+/*   Created: 2023/10/02 21:49:17 by sutku             #+#    #+#             */
+/*   Updated: 2023/10/07 19:44:08 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
-Zombie::Zombie(std::string name)
+int main( void ) 
 {
-	this->name = name;
-}
-
-Zombie::~Zombie()
-{
-	std::cout<<this->name<<" is destroyed"<<std::endl;
-}
-
-void	Zombie::announce()
-{
-	std::cout<<this->name<<": BraiiiiiiinnnzzzZ..."<<std::endl;
+	Fixed a;
+	Fixed b(Fixed(5.05f) * Fixed(2));
+	std::cout<< a <<std::endl;
+	std::cout<< ++a <<std::endl;
+	std::cout<< a <<std::endl;
+	std::cout<< a++ <<std::endl;
+	std::cout<< a <<std::endl;
+	std::cout << b <<std::endl;
+	std::cout<< Fixed::max( a, b ) << std::endl;
+	return (0);
 }
