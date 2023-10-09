@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:31:10 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/07 19:42:56 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/08 16:01:46 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,14 +103,14 @@ bool Fixed::operator!=(const Fixed &x) const
 
 Fixed Fixed::operator+(const Fixed &x)
 {
-	Fixed temp(this->value += x.getRawBits());
+	Fixed temp(this->toFloat() + x.toFloat());
 	
 	return (temp);
 }
 
 Fixed Fixed::operator-(const Fixed &x)
 {
-	Fixed temp(this->value -= x.getRawBits());
+	Fixed temp(this->toFloat() - x.toFloat());
 	
 	return (temp);
 }

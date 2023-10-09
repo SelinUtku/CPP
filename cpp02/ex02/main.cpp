@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 21:49:17 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/07 19:44:08 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/08 16:13:29 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int main( void )
 	std::cout<< a <<std::endl;
 	std::cout << b <<std::endl;
 	std::cout<< Fixed::max( a, b ) << std::endl;
+
 	return (0);
 }
