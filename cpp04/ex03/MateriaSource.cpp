@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:39:42 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/18 15:05:54 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/18 17:09:49 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,11 @@ MateriaSource::~MateriaSource()
 	// std::cout<<"MateriaSource default constructor called"<<std::endl;
 	int i = -1;
 	while (++i < 4)
+	{
 		if (this->materias[i] != NULL)
 		{
 			delete this->materias[i];
 			this->materias[i] = NULL;
 		}
+	}
 }

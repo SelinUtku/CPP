@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:39:38 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/18 15:29:26 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/18 17:10:17 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,11 @@ Character::~Character()
 	// std::cout<<"Character default constructor called"<<std::endl;
 	int i = -1;
 	while (++i < 4)
+	{
 		if (this->inventory[i] != NULL)
 		{
 			delete this->inventory[i];
 			this->inventory[i] = NULL;
 		}
+	}
 }
