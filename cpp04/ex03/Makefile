@@ -6,7 +6,7 @@
 #    By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 16:03:37 by sutku             #+#    #+#              #
-#    Updated: 2023/10/17 10:50:16 by sutku            ###   ########.fr        #
+#    Updated: 2023/10/18 11:27:22 by sutku            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ MAGENTA = \033[0;95m
 CYAN = \033[0;96m
 WHITE = \033[0;97m
 
-SRC		=	main.cpp AMateria.cpp ICharacter.cpp ImateriaSource.cpp
+SRC		=	main.cpp AMateria.cpp MateriaSource.cpp \
+			Character.cpp Cure.cpp Ice.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 CC		= 	c++

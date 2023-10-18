@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:44:59 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/17 17:04:29 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/18 15:01:52 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 AMateria::AMateria()
 {
-	std::cout<<"AMateria Default Constructor called"<<std::endl;
+	// std::cout<<"AMateria Default Constructor called"<<std::endl;
 }
 
 AMateria::AMateria(std::string const &type) : type(type)
 {
-	std::cout<<"AMateria Parameter Constructor called"<<std::endl;
+	// std::cout<<"AMateria Parameter Constructor called"<<std::endl;
 }
 
 AMateria::AMateria(const AMateria &copy)
 {
-	std::cout<<"AMateria copy constructor called"<<std::endl;
+	// std::cout<<"AMateria copy constructor called"<<std::endl;
 	*this = copy;
 }
 
 AMateria& AMateria::operator=(const AMateria &copy)
 {
-	std::cout<<"AMateria copy assignment operator called" << std::endl;
+	// std::cout<<"AMateria copy assignment operator called" << std::endl;
 	this->type = copy.getType();
 	return (*this);
 }
@@ -42,7 +42,7 @@ std::string const& AMateria::getType() const
 
 AMateria::~AMateria()
 {
-	std::cout<<"AMateria Default constructor called"<<std::endl;
+	std::cout<<"AMateria Default destructor called"<<std::endl;
 }
 
 void AMateria::use(ICharacter &target)

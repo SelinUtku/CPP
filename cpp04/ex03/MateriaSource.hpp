@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 10:43:26 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/18 12:47:18 by sutku            ###   ########.fr       */
+/*   Created: 2023/10/18 10:01:49 by sutku             #+#    #+#             */
+/*   Updated: 2023/10/18 12:46:39 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-#define AMATERIA_HPP
+#include "IMateriaSource.hpp"
 
-#include <iostream>
-#include "ICharacter.hpp"
-class ICharacter;
+#ifndef MATERIASOURCE_HPP
+#define MATERISOURCE_HPP
 
-class AMateria
+#include "AMateria.hpp"
+
+class MateriaSource : public IMateriaSource
 {
 	protected:
-		std::string type;
+		AMateria *materias[4];
 	public:
-		AMateria();
-		AMateria(std::string const &type);
-		AMateria(const AMateria &copy);
-		AMateria& operator=(const AMateria &copy);
-		virtual ~AMateria();
-		std::string const & getType() const; //Returns the materia type
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+		MateriaSource();
+		MateriaSource(const MateriaSource &copy);
+		MateriaSource& operator=(const MateriaSource &copy);
+		~MateriaSource();
+	
+		void learnMateria(AMateria *bulls);
+		AMateria* createMateria(std::string const &type);
 };
-
 
 #endif

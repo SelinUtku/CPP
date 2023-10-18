@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:25:26 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/17 17:27:49 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/18 14:28:32 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,23 @@
 
 Cure::Cure() : AMateria("cure")
 {
-	std::cout<<"Cure default Constructor called"<<std::endl;
+	// std::cout<<"Cure default constructor called"<<std::endl;
 }
 
 
 Cure::Cure(const Cure &copy)
 {
-	std::cout<<"Cure copy constructor called"<<std::endl;
+	// std::cout<<"Cure copy constructor called"<<std::endl;
 	*this = copy;
 }
 
 Cure& Cure::operator=(const Cure &copy)
 {
-	std::cout<<"Cure copy assignment operator called" << std::endl;
+	// std::cout<<"Cure copy assignment operator called" << std::endl;
 	this->type = copy.getType();
 	return (*this);
 }
 
-Cure::~Cure()
-{
-	std::cout<<"Cure default constructor called"<<std::endl;
-}
 
 AMateria* Cure::clone() const
 {
@@ -46,4 +42,9 @@ AMateria* Cure::clone() const
 void Cure::use(ICharacter &target)
 {
 	std::cout<<"* heals "<<target.getName()<<"'s wounds *"<<std::endl;
+}
+
+Cure::~Cure()
+{
+	// std::cout<<"Cure default constructor called"<<std::endl;
 }
