@@ -6,7 +6,7 @@
 #    By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 16:03:37 by sutku             #+#    #+#              #
-#    Updated: 2023/10/16 12:18:17 by sutku            ###   ########.fr        #
+#    Updated: 2023/10/20 11:27:46 by sutku            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ MAGENTA = \033[0;95m
 CYAN = \033[0;96m
 WHITE = \033[0;97m
 
-SRC		=	main.cpp ClapTrap.cpp FragTrap.cpp
+SRC		=	main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 CC		= 	c++

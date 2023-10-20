@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 12:26:27 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/18 17:14:48 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/20 08:12:53 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,41 @@ void leaks(void)
 int main()
 {
 	atexit(&leaks);
+	AMateria	*tmp;
+	AMateria	*ice;
+	AMateria	*cure;
+	AMateria	*del;
+	ICharacter	*me;
+	
 	IMateriaSource* src = new MateriaSource();
-	AMateria *ice = new Ice();
-	AMateria *cure = new Cure();
+	ice = new Ice();
+	cure = new Cure();
+	me = new Character("me");
+
 	src->learnMateria(ice);
 	src->learnMateria(cure);
-	ICharacter* me = new Character("me");
-	AMateria* tmp;
+	
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
-	// std::cout<<tmp<<std::endl;
 	me->equip(tmp);
-	me->unequip(0);
-	me->unequip(1);
-	// std::cout<<tmp<<std::endl;
-	// ICharacter* bob = new Character("bob");
-	// delete bob;
+	// unequip
+	// del = ((Character *)me)->getInventory(0);
+	// me->unequip(0);
+	// delete(del);
+	// del = ((Character *)me)->getInventory(1);
+	// me->unequip(1);
+	// delete(del);
+
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	
+	delete bob;
 	delete me;
 	delete src;
 	delete ice;
 	delete cure;
-	// tmp = new Ice();
 	return 0;
 }
 

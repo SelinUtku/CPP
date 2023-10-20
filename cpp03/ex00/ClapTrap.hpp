@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:30:13 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/08 20:36:16 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/20 10:14:13 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ class ClapTrap
 		~ClapTrap();
 		// memnber Functions
 		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		void takeDamage(int amount);
+		void beRepaired(int amount);
 		// GETTERS
 		std::string getName() const;
-		unsigned int	getHitPoints() const;
-		unsigned int	getEnergyPoints() const;
-		unsigned int	getAttackDamage() const;
+		int	getHitPoints() const;
+		int	getEnergyPoints() const;
+		int	getAttackDamage() const;
 		// SETTERS
 		void	setName(std::string newName);
 		void	setHitPoints(int val);

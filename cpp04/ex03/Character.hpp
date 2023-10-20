@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:32:43 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/17 17:55:31 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/20 07:47:11 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ class Character : public ICharacter
 		std::string const & getName() const;
 		void equip(AMateria* m);
 		void unequip(int idx);
-		void use(int idx, ICharacter& target);	
+		void use(int idx, ICharacter& target);
+		AMateria* getInventory(int idx);
 };
 
 

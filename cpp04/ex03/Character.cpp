@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:39:38 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/18 17:10:17 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/20 08:14:38 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Character::Character()
 {
-	// std::cout<<"Character default constructor called"<<std::endl;
+	std::cout<<"Character default constructor called"<<std::endl;
 	int i = -1;
 	while (++i < 4)
 		this->inventory[i] = NULL;
@@ -22,7 +22,7 @@ Character::Character()
 
 Character::Character(std::string const &name) : name(name)
 {
-	// std::cout<<"Character parameter constructor called"<<std::endl;
+	std::cout<<"Character parameter constructor called"<<std::endl;
 	int i = -1;
 	while (++i < 4)
 		this->inventory[i] = NULL;
@@ -30,20 +30,19 @@ Character::Character(std::string const &name) : name(name)
 
 Character::Character(const Character &copy)
 {
-	// std::cout<<"Character copy constructor called"<<std::endl;
+	std::cout<<"Character copy constructor called"<<std::endl;
 	*this = copy;
 }
 
 Character& Character::operator=(const Character &copy)
 {
-	// std::cout<<"Character copy assignment operator called" << std::endl;
+	std::cout<<"Character copy assignment operator called" << std::endl;
 	this->name = copy.getName();
 	int i = -1;
 	if (this != &copy)
 	{
 		while (++i < 4)
 			delete this->inventory[i];
-		// delete this->inventory;
 	}
 	i = -1;
 	while (++i < 4)
@@ -94,9 +93,17 @@ void Character::use(int idx, ICharacter &target)
 	}
 }
 
+
+AMateria*::Character::getInventory(int idx)
+{
+	if (idx >= 0 && idx <=3)
+		return (this->inventory[idx]);
+	return (NULL);
+}
+
 Character::~Character()
 {
-	// std::cout<<"Character default constructor called"<<std::endl;
+	std::cout<<"Character default constructor called"<<std::endl;
 	int i = -1;
 	while (++i < 4)
 	{
