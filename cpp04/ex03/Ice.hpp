@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:58:50 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/17 17:28:05 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/23 14:05:56 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Ice : public AMateria
 		Ice();
 		Ice(const Ice &copy);
 		Ice& operator=(const Ice &copy);
-		~Ice();
+		virtual ~Ice();
 	
 		AMateria* clone() const;
 		void use(ICharacter& target);

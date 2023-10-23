@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:54:15 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/16 16:17:07 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/23 14:08:37 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog : public Animal
 		Dog();
 		Dog(const Dog& copy);
 		Dog& operator=(const Dog& copy);
-		~Dog();
+		virtual	~Dog();
 
 		void makeSound() const;
 };

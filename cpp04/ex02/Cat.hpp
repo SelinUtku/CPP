@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:52:34 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/17 07:39:21 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/23 14:01:39 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 class Cat : public Animal
 {
 	private:
-		Brain *ptr;
+		Brain *brain;
 	public:
 		Cat();
 		Cat(const Cat& copy);
 		Cat& operator=(const Cat& copy);
-		~Cat();
+		virtual ~Cat();
 
 		void makeSound() const;
 };

@@ -6,7 +6,7 @@
 #    By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 16:03:37 by sutku             #+#    #+#              #
-#    Updated: 2023/10/18 17:56:27 by sutku            ###   ########.fr        #
+#    Updated: 2023/10/21 15:03:13 by sutku            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,11 +28,14 @@ OBJ		=	$(SRC:.cpp=.o)
 
 CC		= 	c++
 RM		=   rm -f
-CFLAGS	=	-Wall -Werror -Wextra
+CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -g
 
 NAME	=	materials
 
 all: $(NAME)
+
+.cpp.o:
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)

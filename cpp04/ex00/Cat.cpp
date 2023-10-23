@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:44:42 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/16 16:17:34 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/23 11:03:42 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat()
 	this->setType("Cat");
 }
 
-Cat::Cat(const Cat& copy)
+Cat::Cat(const Cat& copy) : Animal()
 {
 	std::cout<<"Cat copy constructor called"<<std::endl;
 	*this = copy;
@@ -27,7 +27,8 @@ Cat::Cat(const Cat& copy)
 Cat& Cat::operator=(const Cat& copy)
 {
 	std::cout<<"Cat copy assignment operator called" << std::endl;
-	this->setType(copy.getType());
+	if (this != &copy)
+		this->setType(copy.getType());
 	return (*this);
 }
 

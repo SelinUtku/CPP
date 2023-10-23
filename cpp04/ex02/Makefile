@@ -6,7 +6,7 @@
 #    By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 16:03:37 by sutku             #+#    #+#              #
-#    Updated: 2023/10/17 08:56:14 by sutku            ###   ########.fr        #
+#    Updated: 2023/10/23 12:57:59 by sutku            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,12 @@ CC		= 	c++
 RM		=   rm -f
 CFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
-NAME	=	animalnosound
+NAME	=	animals
 
 all: $(NAME)
+
+.cpp.o:
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)

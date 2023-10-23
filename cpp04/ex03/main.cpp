@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 12:26:27 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/20 08:12:53 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/23 13:42:52 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,12 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 
-void leaks(void)
-{
-	system("leaks materials");
-}
-
 int main()
 {
-	atexit(&leaks);
 	AMateria	*tmp;
 	AMateria	*ice;
 	AMateria	*cure;
-	AMateria	*del;
+	// AMateria	*del;
 	ICharacter	*me;
 	
 	IMateriaSource* src = new MateriaSource();
@@ -44,7 +38,7 @@ int main()
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
-	// unequip
+	// UNEQUIP
 	// del = ((Character *)me)->getInventory(0);
 	// me->unequip(0);
 	// delete(del);

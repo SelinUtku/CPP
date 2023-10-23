@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:25:26 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/20 08:15:12 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/23 13:38:47 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cure::Cure() : AMateria("cure")
 }
 
 
-Cure::Cure(const Cure &copy)
+Cure::Cure(const Cure &copy) : AMateria()
 {
 	std::cout<<"Cure copy constructor called"<<std::endl;
 	*this = copy;
@@ -27,7 +27,8 @@ Cure::Cure(const Cure &copy)
 Cure& Cure::operator=(const Cure &copy)
 {
 	std::cout<<"Cure copy assignment operator called" << std::endl;
-	this->type = copy.getType();
+	if (this != &copy)
+		this->type = copy.getType();
 	return (*this);
 }
 

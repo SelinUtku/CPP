@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:14:50 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/16 16:17:41 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/23 11:04:00 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog()
 	this->setType("Dog");
 }
 
-Dog::Dog(const Dog& copy)
+Dog::Dog(const Dog& copy) : Animal()
 {
 	std::cout<<"Dog copy constructor called"<<std::endl;
 	*this = copy;
@@ -27,7 +27,8 @@ Dog::Dog(const Dog& copy)
 Dog& Dog::operator=(const Dog& copy)
 {
 	std::cout<<"Dog copy assignment operator called" << std::endl;
-	this->setType(copy.getType());
+	if (this != &copy)
+		this->setType(copy.getType());
 	return (*this);
 }
 

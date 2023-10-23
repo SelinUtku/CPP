@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:44:38 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/16 16:45:24 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/23 13:31:20 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 int main()
 {
 	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
+	const Animal* j = new Dog();
 	std::cout << i->getType() << " " << std::endl;
+	std::cout << j->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();

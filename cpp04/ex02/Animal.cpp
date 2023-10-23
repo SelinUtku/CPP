@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:01:16 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/17 09:02:02 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/23 11:07:59 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ Animal::Animal(const Animal& copy)
 Animal& Animal::operator=(const Animal& copy)
 {
 	std::cout<<"Animal copy assignment operator called" << std::endl;
-	this->type = copy.getType();
+	if (this != &copy)
+		this->type = copy.getType();
 	return (*this);
 }
 

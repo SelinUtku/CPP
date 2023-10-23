@@ -6,7 +6,7 @@
 #    By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 16:03:37 by sutku             #+#    #+#              #
-#    Updated: 2023/10/17 08:05:06 by sutku            ###   ########.fr        #
+#    Updated: 2023/10/21 15:02:43 by sutku            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,9 @@ CFLAGS	=	-Wall -Werror -Wextra -std=c++98
 NAME	=	brain
 
 all: $(NAME)
+
+.cpp.o:
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)

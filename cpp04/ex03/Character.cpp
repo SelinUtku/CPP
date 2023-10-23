@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:39:38 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/20 08:14:38 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/23 13:07:07 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Character::Character(std::string const &name) : name(name)
 		this->inventory[i] = NULL;
 }
 
-Character::Character(const Character &copy)
+Character::Character(const Character &copy) : ICharacter()
 {
 	std::cout<<"Character copy constructor called"<<std::endl;
 	*this = copy;

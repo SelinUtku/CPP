@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:54:15 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/17 07:40:00 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/23 14:01:29 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 class Dog : public Animal
 {
 	private:
-		Brain *ptr;
+		Brain *brain;
 	public:
 		Dog();
 		Dog(const Dog& copy);
 		Dog& operator=(const Dog& copy);
-		~Dog();
+		virtual ~Dog();
 
 		void makeSound() const;
 };
