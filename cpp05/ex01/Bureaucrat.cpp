@@ -6,21 +6,21 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:00:39 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/27 14:10:54 by sutku            ###   ########.fr       */
+/*   Updated: 2023/10/27 14:34:46 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() :
-_name("noName"), 
-_grade(150)
+	_name("noName"),
+	_grade(150)
 {
 	std::cout<<"Bureaucrat default constuctor called"<<std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string name, int grade) :
-_name(name)
+Bureaucrat::Bureaucrat(const std::string name, int grade) : 
+	_name(name)
 {
 	std::cout<<"Bureaucrat parameter constuctor called"<<std::endl;
 	if (grade >= 1 && grade <= 150)
@@ -47,7 +47,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &copy)
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) :
-_name(copy.getName())
+	_name(copy.getName())
 {
 	std::cout<<"Bureaucrat copy constructor called"<<std::endl;
 	*this = copy;
@@ -65,7 +65,7 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::incrementGrade()
 {
-	if (_grade == 1)
+	if (_grade <= 1)
 		throw(Bureaucrat::GradeTooHighException());
 	else
 		_grade--;
@@ -73,7 +73,7 @@ void Bureaucrat::incrementGrade()
 
 void Bureaucrat::decrementGrade()
 {
-	if (_grade == 150)
+	if (_grade >= 150)
 		throw(Bureaucrat::GradeTooLowException());
 	else
 		_grade++;
@@ -81,16 +81,31 @@ void Bureaucrat::decrementGrade()
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("The Grade is already too High !");	
+	return ("The Grade is too High !");	
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("The Grade is already too Low !");	
+	return ("The Grade is too Low !");	
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bur)
 {
 	out << bur.getName()<<", bureaucrat grade "<<bur.getGrade();
 	return (out);
+}
+
+
+void Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout<<this->_name<<" signed "<<form.getName()<<std::endl;
+	}
+	catch(std::exception& e)
+	{
+		std::cout<<this->_name<<" couldn't sign "<<form.getName()<<" because "<<e.what()<<std::endl;
+	}
+	
 }
