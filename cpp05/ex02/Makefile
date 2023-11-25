@@ -6,7 +6,7 @@
 #    By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 16:03:37 by sutku             #+#    #+#              #
-#    Updated: 2023/11/24 15:51:37 by sutku            ###   ########.fr        #
+#    Updated: 2023/11/25 13:38:11 by sutku            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,14 +22,14 @@ MAGENTA = \033[0;95m
 CYAN = \033[0;96m
 WHITE = \033[0;97m
 
-SRC		=	main.cpp Bureaucrat.cpp Form.cpp
+SRC		=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 CC		= 	c++
 RM		=   rm -f
 CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -g
 
-NAME	=	bureaucrat01
+NAME	=	bureaucrat02
 
 all: $(NAME)
 
@@ -38,7 +38,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	echo "$(CYAN)Ex01 compiled successfully$(DEF_COLOR)"
+	echo "$(CYAN)Ex02 compiled successfully$(DEF_COLOR)"
 
 clean:
 	$(RM) $(OBJ)

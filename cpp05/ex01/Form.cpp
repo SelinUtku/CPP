@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 12:00:22 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/27 14:41:01 by sutku            ###   ########.fr       */
+/*   Updated: 2023/11/25 13:26:19 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,9 @@ Form::Form(const std::string name, int gradeSign, int gradeExecute) :
 	_gradeExecute(gradeExecute)
 {
 	std::cout<<"Form parameter constuctor called"<<std::endl;
-	if (gradeSign < 1)
+	if (gradeSign < 1 || gradeExecute < 1)
 		throw (Form::GradeTooHighException());
-	else if (gradeSign > 150)
-		throw (Form::GradeTooLowException());
-	else if (gradeExecute < 1)
-		throw (Form::GradeTooHighException());
-	else if (gradeExecute > 150)
+	else if (gradeSign > 150 || gradeExecute > 150)
 		throw (Form::GradeTooLowException());
 }
 
@@ -83,7 +79,7 @@ int Form::getGradeExecute() const
 std::ostream &operator<<(std::ostream &out, const Form &form)
 {
 	out<<"Form name: "<<form.getName()<<std::endl<<"Form signed: "<<form.getSigned()<<std::endl<< \
-	"Form Grade Sign: "<<form.getGradeExecute()<<std::endl<<"Form Grade Execute: "<<form.getGradeExecute();
+	"Form Grade Sign: "<<form.getGradeSigned()<<std::endl<<"Form Grade Execute: "<<form.getGradeExecute();
 	return (out);
 }
 
