@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:24:49 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/27 11:53:15 by sutku            ###   ########.fr       */
+/*   Updated: 2023/11/26 13:45:44 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int main( void )
 {
     try 
 	{
-        Bureaucrat bureaucrat("selin", 10);
+        Bureaucrat bureaucrat("selin", 15);
+        // Bureaucrat bureaucrat1("invalid1", 160);
+        // Bureaucrat bureaucrat2("invalid2", -5);
 
         std::cout << bureaucrat << std::endl;
         bureaucrat.incrementGrade();

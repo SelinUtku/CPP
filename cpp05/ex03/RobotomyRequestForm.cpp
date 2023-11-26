@@ -6,11 +6,16 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 16:21:22 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/25 14:06:30 by sutku            ###   ########.fr       */
+/*   Updated: 2023/11/26 15:35:33 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequest", 72, 45), _target("noTarget")
+{
+	std::cout<<"RobotomyRequestForm default constuctor called"<<std::endl;
+}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RobotomyRequest", 72, 45), _target(target)
 {

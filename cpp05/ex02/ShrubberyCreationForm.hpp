@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 16:36:51 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/25 12:43:27 by sutku            ###   ########.fr       */
+/*   Updated: 2023/11/26 15:31:09 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class ShrubberyCreationForm : public AForm
 	private:
 		std::string	_target;
 	public:
+		ShrubberyCreationForm();
 		ShrubberyCreationForm(const std::string &target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm &copy);

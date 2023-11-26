@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:00:39 by sutku             #+#    #+#             */
-/*   Updated: 2023/10/27 14:10:54 by sutku            ###   ########.fr       */
+/*   Updated: 2023/11/26 13:43:59 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ _grade(150)
 Bureaucrat::Bureaucrat(const std::string name, int grade) :
 _name(name)
 {
-	std::cout<<"Bureaucrat parameter constuctor called"<<std::endl;
 	if (grade >= 1 && grade <= 150)
 		this->_grade = grade;
 	else if (grade > 150)
 		throw (Bureaucrat::GradeTooLowException());
 	else
 		throw (Bureaucrat::GradeTooHighException());
+	std::cout<<"Bureaucrat parameter constuctor called"<<std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -81,12 +81,12 @@ void Bureaucrat::decrementGrade()
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("The Grade is already too High !");	
+	return ("The Grade is too high !");	
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("The Grade is already too Low !");	
+	return ("The Grade is too low !");	
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bur)

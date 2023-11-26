@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:52:54 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/25 13:55:10 by sutku            ###   ########.fr       */
+/*   Updated: 2023/11/26 15:12:43 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ AForm::AForm(const std::string name, int gradeSign, int gradeExecute) :
 	_gradeSign(gradeSign),
 	_gradeExecute(gradeExecute)
 {
-	std::cout<<"AForm parameter constuctor called"<<std::endl;
 	if (gradeSign < 1 || gradeExecute < 1)
 		throw (AForm::GradeTooHighException());
 	else if (gradeSign > 150 || gradeExecute > 150)
 		throw (AForm::GradeTooLowException());
+	std::cout<<"AForm parameter constuctor called"<<std::endl;
 }
 
 AForm::~AForm()
@@ -64,7 +64,6 @@ std::string AForm::getName() const
 {
 	return (this->_name);
 }
-
 
 bool AForm::getSigned() const
 {

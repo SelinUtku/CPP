@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 12:22:24 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/25 16:39:17 by sutku            ###   ########.fr       */
+/*   Updated: 2023/11/26 13:19:18 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int main( void )
         Bureaucrat bureaucrat1("Bur1",5);
         Bureaucrat bureaucrat2("Bur2",150);
 		Intern intern;
-		AForm *form1 = intern.makeForm("ShrubberyCreation", "target1");
-		AForm *form2 = intern.makeForm("RobotomyRequest", "target2");
-		AForm *form3 = intern.makeForm("PresidentialPardon", "target3");
+		AForm *form1 = intern.makeForm("shrubbery creation", "target1");
+		AForm *form2 = intern.makeForm("robotomy request", "target2");
+		AForm *form3 = intern.makeForm("presidential pardon", "target3");
 		// AForm *form4 = intern.makeForm("invalid", "target4");
 		
 		std::cout<<std::endl;

@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 12:00:22 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/25 13:26:19 by sutku            ###   ########.fr       */
+/*   Updated: 2023/11/26 14:51:39 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 Form::Form() :
 	_name("noName"), 
 	_signed(false), 
-	_gradeSign(10), 
-	_gradeExecute(5)
+	_gradeSign(1), 
+	_gradeExecute(1)
 {
 	std::cout<<"Form default constuctor called"<<std::endl;
 }
@@ -27,11 +27,11 @@ Form::Form(const std::string name, int gradeSign, int gradeExecute) :
 	_gradeSign(gradeSign),
 	_gradeExecute(gradeExecute)
 {
-	std::cout<<"Form parameter constuctor called"<<std::endl;
 	if (gradeSign < 1 || gradeExecute < 1)
 		throw (Form::GradeTooHighException());
 	else if (gradeSign > 150 || gradeExecute > 150)
 		throw (Form::GradeTooLowException());
+	std::cout<<"Form parameter constuctor called"<<std::endl;
 }
 
 Form::~Form()

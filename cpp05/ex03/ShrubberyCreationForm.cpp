@@ -6,11 +6,16 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 16:36:30 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/25 17:16:04 by sutku            ###   ########.fr       */
+/*   Updated: 2023/11/26 15:33:25 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreation", 145, 137), _target("noTarget")
+{
+	std::cout<<"ShrubberyCreationForm default constuctor called"<<std::endl;
+}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreation", 145, 137), _target(target)
 {
@@ -58,5 +63,5 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
         outFile.close();
 	}
 	else
-		std::cout << "Unable to open file"<<std::endl;
+		std::cerr << "Unable to open file"<<std::endl;
 }

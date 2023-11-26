@@ -6,11 +6,16 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 13:05:08 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/25 13:16:53 by sutku            ###   ########.fr       */
+/*   Updated: 2023/11/26 15:23:44 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
+
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardon", 25, 5), _target("noTarget")
+{
+	std::cout<<"PresidentialPardonForm default constuctor called"<<std::endl;
+}
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PresidentialPardon", 25, 5), _target(target)
 {

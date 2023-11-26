@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 16:21:24 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/25 14:05:12 by sutku            ###   ########.fr       */
+/*   Updated: 2023/11/26 15:35:52 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class RobotomyRequestForm : public AForm
 	private:
 		std::string _target;
 	public:
+		RobotomyRequestForm();
 		RobotomyRequestForm(const std::string &target);
 		RobotomyRequestForm(const RobotomyRequestForm &copy);	
 		RobotomyRequestForm& operator=(const RobotomyRequestForm &copy);	

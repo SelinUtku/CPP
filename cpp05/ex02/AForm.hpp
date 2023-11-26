@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:52:57 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/25 13:04:26 by sutku            ###   ########.fr       */
+/*   Updated: 2023/11/26 15:10:42 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class AForm
 		AForm(const std::string name, int gradeSign, int gradeExecute);
 		AForm(const AForm &copy);
 		AForm& operator=(const AForm &copy);
-		~AForm();
+		virtual ~AForm();
 		//GETTERS
 		std::string		getName() const;
 		bool			getSigned() const;

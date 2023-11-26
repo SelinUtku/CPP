@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:06:20 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/25 12:27:38 by sutku            ###   ########.fr       */
+/*   Updated: 2023/11/26 15:16:01 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Bureaucrat
 		void		incrementGrade();
 		void		decrementGrade();
 		void		signForm(AForm &form);
-		void		executeForm(AForm const & form);
+		void		executeForm(AForm const &form);
 	
 		class GradeTooHighException : public std::exception
 		{

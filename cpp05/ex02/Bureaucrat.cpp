@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:00:39 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/25 12:50:47 by sutku            ###   ########.fr       */
+/*   Updated: 2023/11/26 15:19:26 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ Bureaucrat::Bureaucrat() :
 Bureaucrat::Bureaucrat(const std::string name, int grade) : 
 	_name(name)
 {
-	std::cout<<"Bureaucrat parameter constuctor called"<<std::endl;
 	if (grade >= 1 && grade <= 150)
 		this->_grade = grade;
 	else if (grade > 150)
 		throw (Bureaucrat::GradeTooLowException());
 	else
 		throw (Bureaucrat::GradeTooHighException());
+	std::cout<<"Bureaucrat parameter constuctor called"<<std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -40,9 +40,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &copy)
 {
 	std::cout<<"Bureaucrat copy assignment operator called" << std::endl;
 	if (this != &copy)
-	{
 		this->_grade = copy.getGrade();
-	}
 	return (*this);
 }
 
@@ -81,12 +79,12 @@ void Bureaucrat::decrementGrade()
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("The Grade is too High !");	
+	return ("the grade is too high !");	
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("The Grade is too Low !");
+	return ("the grade is too low !");
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bur)
@@ -94,7 +92,6 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &bur)
 	out << bur.getName()<<", bureaucrat grade "<<bur.getGrade();
 	return (out);
 }
-
 
 void Bureaucrat::signForm(AForm &form)
 {
@@ -110,7 +107,7 @@ void Bureaucrat::signForm(AForm &form)
 	
 }
 
-void Bureaucrat::executeForm(AForm const & form)
+void Bureaucrat::executeForm(AForm const &form)
 {
 	try
 	{
