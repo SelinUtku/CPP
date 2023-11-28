@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 12:58:50 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/28 13:46:36 by sutku            ###   ########.fr       */
+/*   Created: 2023/11/28 15:08:00 by sutku             #+#    #+#             */
+/*   Updated: 2023/11/28 15:09:58 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef BASE_HPP
+# define BASE_HPP
 
-int main(int argc, char **argv)
+# include <iostream>
+
+class Base
 {
-	if (argc != 2)
-	{
-		std::cout << "\033[33mUsage: ./convert [string]\033[0m" << std::endl;
-		return (1);
-	}
-	std::cout << std::fixed;
-	ScalarConverter::convert(argv[1]);
-	
-	
-	return (0);
-}
+	public:
+		virtual ~Base();
+};
+
+#endif

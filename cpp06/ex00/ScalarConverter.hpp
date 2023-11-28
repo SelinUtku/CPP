@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:45:37 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/27 18:57:35 by sutku            ###   ########.fr       */
+/*   Updated: 2023/11/28 13:19:53 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 # define SCALARCONVERTER_HPP
 
 #include <iostream>
+#include <climits>
 #include <limits>
-#include <cmath>
 #include <iomanip>
+#include <string>
+#include <cerrno>
+#include <math.h>
 
 class ScalarConverter
 {

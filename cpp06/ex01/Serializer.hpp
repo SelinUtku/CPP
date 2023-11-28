@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 12:58:50 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/28 13:46:36 by sutku            ###   ########.fr       */
+/*   Created: 2023/11/28 14:47:25 by sutku             #+#    #+#             */
+/*   Updated: 2023/11/28 14:53:18 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
-int main(int argc, char **argv)
+# include <iostream>
+#include <stdint.h>
+
+typedef struct s_data
 {
-	if (argc != 2)
-	{
-		std::cout << "\033[33mUsage: ./convert [string]\033[0m" << std::endl;
-		return (1);
-	}
-	std::cout << std::fixed;
-	ScalarConverter::convert(argv[1]);
-	
-	
-	return (0);
-}
+	std::string str;
+}t_data;
+
+class Serializer
+{
+	private:
+		Serializer();
+		Serializer(Serializer const &copy);
+		Serializer &operator=(Serializer const &copy);
+		~Serializer();
+
+	public:
+		static uintptr_t serialize(t_data* ptr);
+		static t_data* deserialize(uintptr_t raw);
+};
+
+#endif

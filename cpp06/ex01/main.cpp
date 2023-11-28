@@ -5,23 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 12:58:50 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/28 13:46:36 by sutku            ###   ########.fr       */
+/*   Created: 2023/11/28 14:54:08 by sutku             #+#    #+#             */
+/*   Updated: 2023/11/28 15:02:03 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serializer.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
-	if (argc != 2)
-	{
-		std::cout << "\033[33mUsage: ./convert [string]\033[0m" << std::endl;
-		return (1);
-	}
-	std::cout << std::fixed;
-	ScalarConverter::convert(argv[1]);
+	t_data *data = new t_data;
 	
+	data->str = "blablabla";
+	std::cout <<"Data Content:\t"<< data->str << std::endl;
+	std::cout <<"Data Address:\t"<< data << std::endl;
 	
+	uintptr_t raw = Serializer::serialize(data);
+	std::cout <<"Raw Address:\t"<< raw << std::endl;
+	
+	t_data *data2 = Serializer::deserialize(raw);
+	std::cout <<"Data2 Content:\t"<< data2->str << std::endl;
+	std::cout <<"Data2 Address:\t"<< data2 << std::endl;
+	
+	delete data;
 	return (0);
 }

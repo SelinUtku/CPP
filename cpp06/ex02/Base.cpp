@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 12:58:50 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/28 13:46:36 by sutku            ###   ########.fr       */
+/*   Created: 2023/11/28 15:09:37 by sutku             #+#    #+#             */
+/*   Updated: 2023/11/28 15:10:06 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Base.hpp"
 
-int main(int argc, char **argv)
+Base::~Base()
 {
-	if (argc != 2)
-	{
-		std::cout << "\033[33mUsage: ./convert [string]\033[0m" << std::endl;
-		return (1);
-	}
-	std::cout << std::fixed;
-	ScalarConverter::convert(argv[1]);
-	
-	
-	return (0);
+	std::cout << "Base destructor called" << std::endl;
 }
+
