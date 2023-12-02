@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:47:25 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/28 16:33:37 by sutku            ###   ########.fr       */
+/*   Updated: 2023/12/02 12:35:15 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,8 +192,8 @@ void ScalarConverter::convert(std::string str)
 		{
 			std::cout <<"char:\t'"<< str[0] <<"'" <<std::endl;
 			std::cout <<"int:\t"<< static_cast<int>(str[0]) << std::endl;
-			std::cout <<"float:\t"<<std::setprecision(2)<< static_cast<float>(str[0]) << "f" << std::endl;
-			std::cout <<"double:\t"<<std::setprecision(2)<< static_cast<double>(str[0]) << std::endl;
+			std::cout <<"float:\t"<<std::setprecision(3)<< static_cast<float>(str[0]) << "f" << std::endl;
+			std::cout <<"double:\t"<<std::setprecision(3)<< static_cast<double>(str[0]) << std::endl;
 		}
 		else if (type == 1)
 		{
@@ -205,8 +205,8 @@ void ScalarConverter::convert(std::string str)
 			else
 				std::cout <<"char:\t'"<< static_cast<char>(num)<< "'" << std::endl;
 			std::cout <<"int:\t"<< num << std::endl;
-			std::cout <<"float:\t"<<std::setprecision(2)<< static_cast<float>(num) << "f" << std::endl;
-			std::cout <<"double:\t"<<std::setprecision(2)<< static_cast<double>(num) << std::endl;
+			std::cout <<"float:\t"<<std::setprecision(3)<< static_cast<float>(num) << "f" << std::endl;
+			std::cout <<"double:\t"<<std::setprecision(3)<< static_cast<double>(num) << std::endl;
 		}
 		else if (type == 2)
 		{
@@ -221,8 +221,8 @@ void ScalarConverter::convert(std::string str)
 				std::cout <<"int:\t"<< "impossible" << std::endl;
 			else
 				std::cout <<"int:\t"<< static_cast<int>(numf) << std::endl;
-			std::cout <<"float:\t"<<std::setprecision(2)<< numf << "f" << std::endl;
-			std::cout <<"double:\t"<<std::setprecision(2)<< static_cast<double>(numf) << std::endl;
+			std::cout <<"float:\t"<<std::setprecision(3)<< numf << "f" << std::endl;
+			std::cout <<"double:\t"<<std::setprecision(3)<< static_cast<double>(numf) << std::endl;
 		}
 		else if (type == 3)
 		{
@@ -240,12 +240,12 @@ void ScalarConverter::convert(std::string str)
 			if (numd > std::numeric_limits<float>::max() || numd < -std::numeric_limits<float>::max())
 				std::cout <<"float:\t"<< "impossible" << std::endl;
 			else
-				std::cout <<"float:\t"<<std::setprecision(2)<< static_cast<float>(numd) << "f" << std::endl;
-			std::cout <<"double:\t"<<std::setprecision(2)<< numd << std::endl;
+				std::cout <<"float:\t"<<std::setprecision(3)<< static_cast<float>(numd) << "f" << std::endl;
+			std::cout <<"double:\t"<<std::setprecision(3)<< numd << std::endl;
 		}
 		else
 		{
-			std::cerr<<"Error: "<<str<<" is not a valid type"<<std::endl;
+			std::cerr<<"\033[33mError: '"<<str<<"' is not a valid type\033[0m"<<std::endl;
 			return ;
 		}
 	}

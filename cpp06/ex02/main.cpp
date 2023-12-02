@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 15:10:17 by sutku             #+#    #+#             */
-/*   Updated: 2023/11/28 15:23:16 by sutku            ###   ########.fr       */
+/*   Updated: 2023/12/02 12:40:41 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,22 @@ Base * generate()
 
 	if (i == 0)
 	{
-		std::cout << "A generated" << std::endl;
+		std::cout << "\033[35mA is generated\033[0m" << std::endl;
 		return (new A);
 	}
 	else if (i == 1)
 	{
-		std::cout << "B generated" << std::endl;
+		std::cout << "\033[35mB is generated\033[0m"<< std::endl;
 		return (new B);
 	}
 	else
 	{
-		std::cout << "C generated" << std::endl;
+		std::cout << "\033[35mC is generated\033[0m" << std::endl;
 		return (new C);
 	}
 }
 
-void identifyFromPointer(Base * p)
+void identifyFromPointer(Base *p)
 {
 	if (dynamic_cast<A*>(p))
 		std::cout << "Pointer is type of A" << std::endl;
@@ -44,6 +44,8 @@ void identifyFromPointer(Base * p)
 		std::cout << "Pointer is type of B" << std::endl;
 	else if (dynamic_cast<C*>(p))
 		std::cout << "Pointer is type of C" << std::endl;
+	else
+		std::cout << "Pointer is not type of A, B or C" << std::endl;
 }
 
 void identifyFromObject(Base &p)
@@ -81,7 +83,6 @@ int main()
 
 	Base *base = generate();
 	identifyFromPointer(base);
-
 	identifyFromObject(*base);
 
 	delete base;
