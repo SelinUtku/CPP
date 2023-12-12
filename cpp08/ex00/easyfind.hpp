@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 15:39:27 by sutku             #+#    #+#             */
-/*   Updated: 2023/12/03 14:08:19 by sutku            ###   ########.fr       */
+/*   Created: 2023/12/03 15:01:08 by sutku             #+#    #+#             */
+/*   Updated: 2023/12/09 16:04:53 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-# define WHATEVER_HPP
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
 #include <iostream>
+#include <vector>
+#include <list>
+#include <algorithm>
 
 template <typename T>
-void swap(T &a, T &b)
+void easyfind(T &container, int n)
 {
-	T temp = a;
-	a = b;
-	b = temp;
+	typename T::iterator it;
+
+	it = std::find(container.begin(), container.end(), n);
+	if (it != container.end())
+		std::cout << "Found '" << n << "'" <<std::endl;
+	else
+		throw std::exception();
 }
 
-template <typename T>
-T const min(T const &a, T const &b)
-{
-	if (a < b)
-		return (a);
-	return (b);
-}
-
-template <typename T>
-T const max(T const &a, T const &b)
-{
-	if (a > b)
-		return (a);
-	return (b);
-}
 
 #endif

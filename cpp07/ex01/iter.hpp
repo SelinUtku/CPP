@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 16:45:06 by sutku             #+#    #+#             */
-/*   Updated: 2023/12/02 17:51:06 by sutku            ###   ########.fr       */
+/*   Updated: 2023/12/03 14:11:25 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 #include <iostream>
 #include <cctype>
+
+template <typename T>
+void print(T const &x)
+{
+	std::cout << x << std::endl;
+}
 
 template <typename T>
 void increase(T const &x)
@@ -40,6 +46,5 @@ void iter(T *array, int length, void (*f)(T const &))
 	while (++i < length)
 		f(array[i]);
 }
-
 
 #endif

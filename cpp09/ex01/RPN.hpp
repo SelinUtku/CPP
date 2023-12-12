@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 15:39:27 by sutku             #+#    #+#             */
-/*   Updated: 2023/12/03 14:08:19 by sutku            ###   ########.fr       */
+/*   Created: 2023/12/12 14:47:22 by sutku             #+#    #+#             */
+/*   Updated: 2023/12/12 18:17:09 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-# define WHATEVER_HPP
+#ifndef RPN_HPP
+#define RPN_HPP
 
 #include <iostream>
+#include <stack>
+#include <string>
 
-template <typename T>
-void swap(T &a, T &b)
+class RPN
 {
-	T temp = a;
-	a = b;
-	b = temp;
-}
+	private:
+		std::stack<double> _stack;
+	public:
+		RPN();
+		RPN(RPN const & src);
+		~RPN();
 
-template <typename T>
-T const min(T const &a, T const &b)
-{
-	if (a < b)
-		return (a);
-	return (b);
-}
+		RPN & operator=(RPN const & src);
+		void calculate(std::string input);
+		void plus();
+		void minus();
+		void multiply();
+		void divide();
 
-template <typename T>
-T const max(T const &a, T const &b)
-{
-	if (a > b)
-		return (a);
-	return (b);
-}
+		
+};
 
 #endif

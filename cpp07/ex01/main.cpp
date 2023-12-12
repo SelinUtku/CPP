@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 16:54:54 by sutku             #+#    #+#             */
-/*   Updated: 2023/12/02 17:19:39 by sutku            ###   ########.fr       */
+/*   Updated: 2023/12/05 16:57:14 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int main()
 	
 	iter(arr, 5, increase);
 	iter(str, 3, doCapital);
-	// should work with any function ?
+	iter(arr, 5, print);
+	iter(str, 3, print);
 
 	return (0);
 }

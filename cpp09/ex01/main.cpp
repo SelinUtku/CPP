@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 15:39:27 by sutku             #+#    #+#             */
-/*   Updated: 2023/12/03 14:08:19 by sutku            ###   ########.fr       */
+/*   Created: 2023/12/12 18:15:27 by sutku             #+#    #+#             */
+/*   Updated: 2023/12/12 18:15:52 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-# define WHATEVER_HPP
+#include "RPN.hpp"
 
-#include <iostream>
-
-template <typename T>
-void swap(T &a, T &b)
+int main(int argc, char **argv)
 {
-	T temp = a;
-	a = b;
-	b = temp;
-}
+	RPN rpn;
 
-template <typename T>
-T const min(T const &a, T const &b)
-{
-	if (a < b)
-		return (a);
-	return (b);
+	if (argc != 2)
+	{
+		std::cout << "Usage: ./rpn \"[expression]\"" << std::endl;
+		return 0;
+	}
+	rpn.calculate(argv[1]);
+	return 0;
 }
-
-template <typename T>
-T const max(T const &a, T const &b)
-{
-	if (a > b)
-		return (a);
-	return (b);
-}
-
-#endif

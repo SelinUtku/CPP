@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 15:39:27 by sutku             #+#    #+#             */
-/*   Updated: 2023/12/03 14:08:19 by sutku            ###   ########.fr       */
+/*   Created: 2023/12/11 16:17:55 by sutku             #+#    #+#             */
+/*   Updated: 2023/12/12 14:44:23 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-# define WHATEVER_HPP
+#include "BitcoinExchange.hpp"
 
-#include <iostream>
-
-template <typename T>
-void swap(T &a, T &b)
+int main(int argc, char **argv)
 {
-	T temp = a;
-	a = b;
-	b = temp;
-}
+	Bitcoin bitcoin;
 
-template <typename T>
-T const min(T const &a, T const &b)
-{
-	if (a < b)
-		return (a);
-	return (b);
-}
+	if (argc != 2)
+	{
+		std::cerr << "\033[0;93mUsage: ./bitcoin [filename]\033[0;39m" << std::endl;
+		return (1);
+	}
 
-template <typename T>
-T const max(T const &a, T const &b)
-{
-	if (a > b)
-		return (a);
-	return (b);
+	bitcoin.readDataBase();
+	bitcoin.readInput(argv);
+	
+	return (0);
 }
-
-#endif

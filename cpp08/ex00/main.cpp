@@ -5,45 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 18:37:04 by sutku             #+#    #+#             */
-/*   Updated: 2023/12/07 16:46:16 by sutku            ###   ########.fr       */
+/*   Created: 2023/12/03 15:10:34 by sutku             #+#    #+#             */
+/*   Updated: 2023/12/03 15:21:36 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Array.hpp"
+#include "easyfind.hpp"
 
-int main ()
+int main()
 {
+	std::vector<int> vec;
+	vec.push_back(1);
+	vec.push_back(2);
+	vec.push_back(3);
+	vec.push_back(4);
+	vec.push_back(5);
+	std::list<int> lst;
+	lst.push_back(1);
+	lst.push_back(2);
+	lst.push_back(3);
+	lst.push_back(4);
+	lst.push_back(5);
+	
 	try
 	{
-		Array<int> arr1(2);
-		arr1[0] = 15;
-		arr1[1] = 16;
-		// arr1[2] = 17;
-		Array<int> arr2;
-		arr2 = arr1;
-		Array<int> arr3(arr2);
-
-		std::cout << arr2[0] << std::endl;
-		std::cout << arr2[1] << std::endl;
-		std::cout << arr2.size() << std::endl;
-		
-		std::cout << arr3[0] << std::endl;
-		std::cout << arr3[1] << std::endl;
-		std::cout << arr3.size() << std::endl;
-
-		Array<std::string> arr4(3);
-		arr4[0] = "Hello";
-		arr4[1] = "World";
-		arr4[2] = "!";
-		unsigned int i = -1;
-		while (++i < arr4.size())
-			std::cout << arr4[i] << std::endl;	
+		easyfind(vec, 3);
+		easyfind(vec, 6);
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << "Not found" << std::endl;
 	}
-	
+
+	try
+	{
+		easyfind(lst, 2);
+		easyfind(lst, 8);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Not found" << std::endl;
+	}
 	return (0);
 }

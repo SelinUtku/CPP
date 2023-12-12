@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 18:36:33 by sutku             #+#    #+#             */
-/*   Updated: 2023/12/02 18:47:57 by sutku            ###   ########.fr       */
+/*   Updated: 2023/12/07 16:23:33 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ template <typename T>
 Array<T>::~Array()
 {
 	if (this->_arr)
-		delete [] _arr;
+		delete [] this->_arr;
 	std::cout << "Array destructor called" << std::endl;
 }
 
