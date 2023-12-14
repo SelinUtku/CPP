@@ -5,22 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/12 18:15:27 by sutku             #+#    #+#             */
-/*   Updated: 2023/12/13 12:34:30 by sutku            ###   ########.fr       */
+/*   Created: 2023/12/13 13:32:00 by sutku             #+#    #+#             */
+/*   Updated: 2023/12/14 16:15:20 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#include "PmergeMe.hpp"
 
-int main(int argc, char **argv)
+int main (int argc, char **argv)
 {
-	RPN rpn;
+	PmergeMe p;
 
-	if (argc != 2)
-	{
-		std::cout << "\033[0;93mUsage: ./rpn \"[expression]\"\033[0;39m" << std::endl;
-		return 0;
-	}
-	rpn.calculate(argv[1]);
-	return 0;
+	if (argc < 2)
+		return (0);
+
+	p.readInput(argv);
+	p.makePairs();
+	p.mergePairs();
+	p.createChains();
+	
+
+
+	// std::vector<std::pair<unsigned int, unsigned int> >::iterator it = p._pairs.begin();
+	// while (it != p._pairs.end())
+	// {
+	// 	std::cout << it->first << " " << it->second << std::endl;
+	// 	it++;
+	// }
+	return (0);
+
 }

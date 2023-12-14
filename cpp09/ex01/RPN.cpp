@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:48:53 by sutku             #+#    #+#             */
-/*   Updated: 2023/12/12 18:34:30 by sutku            ###   ########.fr       */
+/*   Updated: 2023/12/13 12:31:44 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ RPN & RPN::operator=(RPN const &copy)
 {
 	if (this != &copy)
 	{
-	
-		
-		
+		_stack = copy._stack;	
 	}
 	return *this;
 }
