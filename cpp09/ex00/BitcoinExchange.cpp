@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 13:03:02 by sutku             #+#    #+#             */
-/*   Updated: 2023/12/12 15:50:38 by sutku            ###   ########.fr       */
+/*   Updated: 2023/12/15 19:56:54 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,26 @@
 
 Bitcoin::Bitcoin()
 {
-	
+	// std::cout << "Default constructor called" << std::endl;
+	return ;
 }
 
 Bitcoin::Bitcoin(const Bitcoin &copy)
 {
+	// std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
+	return ;
 }
 
 Bitcoin::~Bitcoin()
 {
+	// std::cout << "Destructor called" << std::endl;
+	return ;
 }
 
 Bitcoin &Bitcoin::operator=(const Bitcoin &copy)
 {
+	// std::cout << "Copy Assignment operator called" << std::endl;
 	if (this != &copy)
 	{
 		_dataBase.clear();
@@ -86,7 +92,7 @@ float Bitcoin::isValidPrice(std::string price)
 
 	errno = 0;
 	if (price.find('.') != std::string::npos && price.find('f') == price.length() - 1)
-		price.pop_back();
+		price.erase(price.size() - 1);
 	value = std::strtof(price.c_str(), &end);
 	if (end != price.c_str() + price.length() || errno != 0)
 		throw InvalidPriceException();
@@ -119,11 +125,11 @@ void Bitcoin::readInput(char **argv)
 				continue;
 			}
 			date = line.substr(0, line.find('|'));
-			while(date.back() == ' ')
-				date.pop_back();
+			while (!date.empty() && date[date.size() - 1] == ' ')
+    			date.erase(date.size() - 1);
 			price = line.substr(line.find('|') + 1);
-			while(price.back() == ' ')
-				price.pop_back();
+			while (!price.empty() && price[price.size() - 1] == ' ')
+    			price.erase(price.size() - 1);
 			try
 			{
 				isValidDate(date);
@@ -138,7 +144,10 @@ void Bitcoin::readInput(char **argv)
 		file.close();
 	}
 	else
-		std::cout << "Unable to open file" << std::endl;
+	{
+		std::cout << "Unable to open "<<argv[1]<< std::endl;
+		exit(1);
+	}
 }
 
 void Bitcoin::readDataBase()
@@ -165,7 +174,10 @@ void Bitcoin::readDataBase()
 		file.close();
 	}
 	else
-		std::cout << "Unable to open file" << std::endl;
+	{
+		std::cout << "Unable to open data.csv" << std::endl;
+		exit(1);
+	}
 }
 
 const char *Bitcoin::InvalidDateException::what() const throw()

@@ -6,7 +6,7 @@
 /*   By: sutku <sutku@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:48:53 by sutku             #+#    #+#             */
-/*   Updated: 2023/12/13 12:31:44 by sutku            ###   ########.fr       */
+/*   Updated: 2023/12/15 22:14:51 by sutku            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,28 @@
 
 RPN::RPN()
 {
+	//std::cout << "Default constructor called" << std::endl;
 	return;
 }
 
 RPN::RPN(RPN const &copy)
 {
+	//std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 	return;
 }
 
 RPN::~RPN()
 {
+	//std::cout << "Destructor called" << std::endl;
 	return;
 }
 
 RPN & RPN::operator=(RPN const &copy)
 {
+	//std::cout << "Copy Assignment operator called" << std::endl;
 	if (this != &copy)
-	{
 		_stack = copy._stack;	
-	}
 	return *this;
 }
 
@@ -45,7 +47,7 @@ void RPN::plus()
 	if (_stack.size() < 2)
 	{
 		std::cout << "Not enough values in stack" << std::endl;
-		return ;
+		exit (1);
 	}
 	a = _stack.top();
 	_stack.pop();
@@ -62,7 +64,7 @@ void RPN::minus()
 	if (_stack.size() < 2)
 	{
 		std::cout << "Not enough values in stack" << std::endl;
-		return ;
+		exit (1);
 	}
 	a = _stack.top();
 	_stack.pop();
@@ -79,7 +81,7 @@ void RPN::multiply()
 	if (_stack.size() < 2)
 	{
 		std::cout << "Not enough values in stack" << std::endl;
-		return ;
+		exit (1);
 	}
 	a = _stack.top();
 	_stack.pop();
@@ -96,7 +98,7 @@ void RPN::divide()
 	if (_stack.size() < 2)
 	{
 		std::cout << "Not enough values in stack" << std::endl;
-		return ;
+		exit (1);
 	}
 	a = _stack.top();
 	_stack.pop();
@@ -137,4 +139,3 @@ void RPN::calculate(std::string input)
 	else
 		std::cout << "Not enough values in stack" << std::endl;
 }
-
